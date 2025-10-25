@@ -196,11 +196,12 @@ def run_inference(models: Models, image: Image.Image, topk: int = 8):
     cs_fused = models.clip_score(image, cap_fused)
 
     return {
-        "labels_topk": labels,
-        "baseline_caption": cap,
-        "fused_caption": cap_fused,
-        "recall_baseline": r_base,
-        "recall_fused": r_fused,
-        "clipscore_baseline": cs_base,
-        "clipscore_fused": cs_fused,
-    }
+    "labels_topk": labels,
+    "baseline_caption": cap,
+    "panoptic_caption": cap_fused,       # renamed
+    "recall_baseline": r_base,
+    "recall_panoptic": r_fused,          # renamed
+    "clipscore_baseline": cs_base,
+    "clipscore_panoptic": cs_fused,      # renamed
+}
+
